@@ -1,7 +1,9 @@
+import { test } from '../fixtures/testFixtures';
+import { HomePage } from '../../src/ui/pages/home.page';
 
-import { test, expect } from '../fixtures/testFixtures';
+test('Homepage loads', async ({ page }) => {
+  const home = new HomePage(page);
 
-test('Homepage loads and has title', async ({ page }) => {
-  await page.goto('/');
-  await expect(page).toHaveTitle(/FOP/i);
+  await home.open();
+  await home.checkTitle();
 });

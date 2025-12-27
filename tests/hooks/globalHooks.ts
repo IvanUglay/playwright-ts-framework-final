@@ -1,6 +1,5 @@
+import { test as base } from '@playwright/test';
 
-import { test } from '@playwright/test';
-
-test.beforeEach(async ({ page }) => {
-  await page.goto('/');
+base.beforeEach(async ({ page }) => {
+  console.log('Starting test...');
 });
